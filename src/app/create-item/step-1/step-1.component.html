@@ -1,0 +1,24 @@
+<md-toolbar color="accent">
+  <i class="material-icons" routerLink="/home">home</i>&nbsp;|&nbsp;&nbsp;<span routerLink="/home" style="cursor: pointer">Home</span>
+  <span style="text-align: right" class="example-spacer">Select Categoies</span>
+  <span class="example-spacer"></span>
+  <md-icon class="example-icon">verified_user</md-icon>
+</md-toolbar>
+<md-card>Select any category where your item suitable.</md-card>
+<form [formGroup]="itemForm" class="input-form" (ngSubmit)="onNextStep2()">
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="Master Category" aria-label="Masert Category" [mdAutocomplete]="auto" formControlName="categoryId">
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let master of filteredStates | async" [value]="master.id">
+        <md-icon class="material-icons">{{master.icon}}</md-icon>
+        <span>{{ master.title }}</span> |
+        <small>Description: {{master.description}}</small>
+      </md-option>
+    </md-autocomplete>
+  </md-form-field>
+
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="Sub Category" formControlName="subCategoryId">
+  </md-form-field>
+  <button md-raised-button color="accent" [disabled]="!itemForm.valid">Next</button>
+</form>

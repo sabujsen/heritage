@@ -1,0 +1,25 @@
+<md-toolbar color="accent">
+  <i class="material-icons" routerLink="/home">home</i>&nbsp;|&nbsp;&nbsp;<span routerLink="/home" style="cursor: pointer">Home</span>
+  <span style="text-align: right" class="example-spacer">Add Data</span>
+  <span class="example-spacer"></span>
+  <md-icon class="example-icon">verified_user</md-icon>
+</md-toolbar>
+<md-card>Fill field with in the form. You must add Title and other fields are optional.</md-card>
+<form class="input-form" [formGroup]="item2Form" (ngSubmit)="onNextStep3()">
+  <md-form-field class="input-full-width">
+    <input mdInput placeholder="Title*" formControlName="title">
+  </md-form-field>
+  <md-form-field class="input-full-width">
+    <input mdInput placeholder="Address" formControlName="address">
+  </md-form-field>
+  <md-form-field class="input-full-width">
+    <input mdInput placeholder="Landmark" formControlName="landmark">
+  </md-form-field>
+  <md-form-field class="input-full-width">
+    <textarea mdInput placeholder="Short Description" formControlName="shortDescription"></textarea>
+  </md-form-field>
+  <md-form-field class="input-full-width">
+    <textarea mdInput placeholder="Description" formControlName="description"></textarea>
+  </md-form-field>
+  <button md-raised-button color="accent" [disabled]="!item2Form.valid">Next</button>
+</form>

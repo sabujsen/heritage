@@ -1,0 +1,38 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.material-icons.md-72 {
+  font-size: 72px;
+  cursor: pointer;
+  position: absolute;
+  top: 49%;
+}
+
+.right {
+  right: 5px;
+}
+
+.left {
+  left: 5px;
+}
+
+.pos {
+  position: absolute;
+  top: 1%;
+  right: 5px;
+}
+.pos2 {
+  position: absolute;
+  top: 1%;
+  right: 80px;
+}
+.pos4 {
+  position: absolute;
+  top: 1%;
+  right: 120px;
+}

@@ -1,0 +1,22 @@
+<md-toolbar color="accent">
+  <span>Heritage</span>
+  <span class="example-spacer"></span>
+</md-toolbar>
+<md-card>
+  <md-card-header class="header-title">
+    <md-card-title>Welcome</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-grid-list cols="3" rowHeight="3.5:1">
+      <md-grid-tile *ngFor="let tile of titleList;">
+        <md-card class="icon-box mat-elevation-z0">
+          <md-icon class="material-icons md-72" [routerLink]="['/items', tile.id]">{{tile.icon}}</md-icon>
+          <md-card-subtitle>
+            <h5 [routerLink]="['/items', tile.id]" style="cursor: pointer;">{{tile.title}}</h5>
+          </md-card-subtitle>
+        </md-card>
+      </md-grid-tile>
+    </md-grid-list>
+  </md-card-content>
+</md-card>
+<button md-raised-button color="accent" [routerLink]="['/create-item']">Add New Item</button>

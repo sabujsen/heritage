@@ -1,0 +1,46 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-box {
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.2em;
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h5:hover {
+  color: #d84146;
+  font-weight: bold;
+}
+
+.mat-card-title {
+  padding: 2%;
+  widows: 100%;
+  color: #d84146;
+  position: relative;
+  display: flex;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.mat-icon {
+  height: 72px;
+  width: 72px;
+}
+
+.material-icons.md-72 {
+  font-size: 72px;
+  cursor: pointer;
+}
+
+.icon-box:hover {
+  color: #d84146;
+}
+
+.mat-raised-button.mat-accent {
+  width: 100%!important;
+}

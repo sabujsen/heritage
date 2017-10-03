@@ -1,0 +1,25 @@
+<md-toolbar color="accent">
+  <i class="material-icons" routerLink="/home">home</i>&nbsp;|&nbsp;&nbsp;<span routerLink="/home" style="cursor: pointer">Home</span>
+  <span style="text-align: right" class="example-spacer">Add Images</span>
+  <span class="example-spacer"></span>
+  <md-icon class="example-icon">verified_user</md-icon>
+</md-toolbar>
+<md-card>Add images for added item. You can add multiple images. you must upload .gif or .jpg files.</md-card>
+<form class="input-form" (ngSubmit)="onNextStepComplete()">
+  <span class="btn btn-default btn-file">
+      Browse <input type="file" (change)="fileChanged($event)" name="files[]" multiple="multiple" accept="image/gif, image/jpeg">
+  </span>
+  <hr>
+  <md-card *ngFor="let uploadedImage of uploadedImages;let i= index;">
+    <md-card-header>
+      <div md-card-avatar class="img-header">{{i+1}}</div>
+      <md-card-title>{{uploadedImage.originalName}}</md-card-title>
+      <md-card-subtitle> {{uploadedImage.generatedName}}</md-card-subtitle>
+      <md-card-subtitle> {{uploadedImage.status}}</md-card-subtitle>
+    </md-card-header>
+  </md-card>
+  <div [hidden]="!uploadStatus">
+    <md-spinner color="accent"></md-spinner>
+  </div>
+  <button md-raised-button color="accent">Next</button>
+</form>

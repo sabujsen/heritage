@@ -1,0 +1,53 @@
+<md-toolbar color="accent">
+  <i class="material-icons" routerLink="/home">home</i>&nbsp;|&nbsp;&nbsp;<span routerLink="/home" style="cursor: pointer">Home</span>
+</md-toolbar>
+<md-card>Please checks all your input is valid.</md-card>
+<form class="input-form">
+  <md-card>
+    <md-card-content>
+      <md-card-header>
+        <md-card-title>Title</md-card-title>
+        <md-card-subtitle> {{item.title}}</md-card-subtitle>
+        <md-card-title>Description</md-card-title>
+        <md-card-subtitle> {{item.description}}</md-card-subtitle>
+        <md-card-title>Address</md-card-title>
+        <md-card-subtitle> {{item.address}}</md-card-subtitle>
+        <md-card-title>Landmark</md-card-title>
+        <md-card-subtitle> {{item.landmark}}</md-card-subtitle>
+        <md-card-title>Short Description</md-card-title>
+        <md-card-subtitle> {{item.shortDescription}}</md-card-subtitle>
+      </md-card-header>
+    </md-card-content>
+  </md-card>
+  <md-card>
+    <md-card-content>
+      <md-card-header>
+        <md-card-title>Latitude</md-card-title>
+        <md-card-subtitle>{{item.latitude}}</md-card-subtitle>
+        <md-card-title>Longitude</md-card-title>
+        <md-card-subtitle> {{item.longitude}}</md-card-subtitle>
+      </md-card-header>
+    </md-card-content>
+  </md-card>
+  <md-card>
+    <md-card-content>
+      <md-card-header>
+        <md-card-title>Favotite <i class="material-icons md-24 orange600" [hidden]="!item.isFavotite">done</i><i class="material-icons md-24 orange600"
+            [hidden]="item.isFavotite">clear</i></md-card-title>
+        <md-card-title>Visited <i class="material-icons md-24 orange600" [hidden]="!item.isVisited">done</i><i class="material-icons md-24 orange600"
+            [hidden]="item.isVisited">clear</i></md-card-title>
+        <md-card-title>Star <i class="material-icons md-24 orange600" [hidden]="!item.isStar">done</i><i class="material-icons md-24 orange600"
+            [hidden]="item.isStar">clear</i></md-card-title>
+      </md-card-header>
+      <div [hidden]="!completeStatus">
+          <md-spinner color="accent"></md-spinner>
+        </div>
+    </md-card-content>
+  </md-card>
+  <md-card>
+    <md-card-content>
+      <button md-raised-button color="accent" (click)="onSubmit();">Submit</button>
+      <button md-raised-button color="accent" (click)="onCancel();">Cancel</button>
+    </md-card-content>
+  </md-card>
+</form>

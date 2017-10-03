@@ -1,0 +1,21 @@
+<h1 md-dialog-title>{{data.title}}</h1>
+<div class="md-dialog-content">
+  <h4 md-line>{{data.title}}</h4>
+  <p md-line> {{data.address}}</p>
+  <p md-line> {{data.landmark}}</p>
+  <p md-line> {{data.shortDescription}}</p>
+  <p md-line> Likes: {{data.likes}}</p>
+  <p md-line style="line-height:5px;">
+    <strong style="vertical-align: text-top">Favotite :</strong> <i class="material-icons md-24 orange600">{{data.isFavotite==0?'clear':'done'}}</i>
+    <strong style="vertical-align: text-top">Visited :</strong> <i class="material-icons md-24 orange600">{{data.isVisited==0?'clear':'done'}}</i>
+    <strong style="vertical-align: text-top">Star :</strong> <i class="material-icons md-24 orange600">{{data.isStar==0?'clear':'done'}}</i>
+  </p>
+  <md-chip-list>
+    <md-chip *ngFor="let tag of data.tags;">{{tag.name}}</md-chip>  
+  </md-chip-list>
+</div>
+
+<app-map [latitude]="data.latitude" [longitude]="data.longitude" [title]="data.title"></app-map>
+<div md-dialog-actions>
+  <button md-raised-button color="accent" (click)="onNoClick()" tabindex="-1">Exit</button>
+</div>

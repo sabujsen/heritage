@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=@{Caveat}:300,400');
+
+.md-dialog-content{
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  color: #fff;
+ 
+}
+.mat-dialog-container{
+  box-shadow: 10px 10px 5px #888;
+}

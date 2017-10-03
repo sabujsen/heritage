@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-section {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 40px 20px 0;
+}
+
+.input-form {
+  margin: 40px 20px 0;
+  width: 100%;
+}
+
+.example-margin {
+  margin: 5px;
+}
+
+.mat-raised-button.mat-accent {
+  width: 100%!important;
+}

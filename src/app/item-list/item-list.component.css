@@ -1,0 +1,42 @@
+.search-full-width {
+  width: 78%;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.material-icons.md-72 {
+  font-size: 72px;
+  width: 80px;
+  cursor: pointer;
+  position: fixed;
+}
+
+.mat-list-text-content {
+  margin-left: 20px;
+  vertical-align: middle;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.material-icons.orange600 {
+  color: #ff4081;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.mat-raised-button {
+  min-width: 10px;
+  line-height: 22px;
+  margin-left: 7%;
+}
+.setposition{
+  margin-top: 15px;
+}

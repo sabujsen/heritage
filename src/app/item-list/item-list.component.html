@@ -1,0 +1,41 @@
+<md-toolbar color="accent">
+  <i class="material-icons" routerLink="/home">home</i>&nbsp;|&nbsp;&nbsp;<span routerLink="/home" style="cursor: pointer">Home</span>
+  <span class="example-spacer"></span>
+  <md-icon routerLink="/gallery-view">collections</md-icon><span routerLink="/gallery-view" style="cursor: pointer">Gallery</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <md-icon [routerLink]="['/map-view', id]">pin_drop</md-icon><span [routerLink]="['/map-view', id]" style="cursor: pointer">Map</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</md-toolbar>
+<md-card>
+  <md-card-content>
+    <md-card-header style="position: fixed;right:80px;">
+      <share-buttons [linkedIn]="false" [tumblr]="false" [reddit]="false" [stumbleUpOn]="false"></share-buttons>
+    </md-card-header>
+  </md-card-content>
+  <md-card-header class="header-title">
+    <i class="material-icons setposition">search</i>
+    <md-form-field class="search-full-width">
+      <input mdInput placeholder="Search with Title" [(ngModel)]="searchText"  >
+    </md-form-field>
+  </md-card-header>
+  <hr>
+  <md-card-content>
+    <md-list>
+      <md-list-item *ngFor="let item of items | titlesearch: searchText" style="height: 120px;cursor: pointer;" (click)="onSelectItem(item.id);">
+        <img [src]="item.imgs!=null?item.imgs[0].imagePath:'./assets/images/no_image_thumb.gif'" class="img-circle" width="80px" height="80px" alt="{{item.title}}">
+        <div class="mat-list-text-content">
+          <h4 md-line>{{item.title}}, {{item.address}}</h4>
+          <p md-line> {{item.shortDescription}}</p>
+          <p md-line style="line-height:5px;">
+            <strong style="vertical-align: text-top">Favotite :</strong> <i class="material-icons md-24 orange600">{{item.isFavotite==0?'clear':'done'}}</i>
+            <strong style="vertical-align: text-top">Visited :</strong> <i class="material-icons md-24 orange600">{{item.isVisited==0?'clear':'done'}}</i>
+            <strong style="vertical-align: text-top">Star :</strong> <i class="material-icons md-24 orange600">{{item.isStar==0?'clear':'done'}}</i>
+          </p>
+          <md-chip-list>
+            <md-chip *ngFor="let tag of item.tags;">{{tag.name}}</md-chip>
+            <button md-raised-button color="primary">Likes : {{item.likes}}</button>
+          </md-chip-list>
+        </div>
+        <i class="material-icons">keyboard_arrow_right</i>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>

@@ -1,0 +1,23 @@
+<md-toolbar color="accent">
+  <i class="material-icons" [routerLink]="['/items', paramid]" style="cursor: pointer">keyboard_backspace</i>&nbsp;|&nbsp;&nbsp;
+  <span
+    routerLink="/home" style="cursor: pointer">Home</span>
+    <span style="text-align: right" class="example-spacer">{{item.title}}</span>
+    <span class="example-spacer"></span>
+    <button md-fab color="primary" (click)="onLike()">Like</button>
+</md-toolbar>
+
+<md-card>
+  <md-card-content>
+    <a class="pos2" href="http://pinterest.com/pin/create/button/?url=http%3A//kuhook.com/&description={{item.title}}&media={{defaultImagePath}}"
+      target="_blank">
+      <i class="fa fa-pinterest-p" style="font-size: 36px;color: red;"></i></a>
+    <a class="pos4" href="https://api.whatsapp.com/send?text={{defaultImagePath}}" target="_blank">
+        <i class="fa fa-whatsapp" style="font-size: 36px;color: #25d366;"></i></a>
+
+    <button class="pos" md-fab color="accent" (click)="openDialog()">More</button>
+    <i class="material-icons md-72 left" *ngIf="prevVisible" (click)="onPrevClick()">keyboard_arrow_left</i>
+    <img #image [src]="defaultImagePath" md-card-image>
+    <i class="material-icons md-72 right" *ngIf="nextVisible" (click)="onNextClick()">keyboard_arrow_right</i>
+  </md-card-content>
+</md-card>

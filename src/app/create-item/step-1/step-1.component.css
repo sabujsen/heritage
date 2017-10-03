@@ -1,0 +1,16 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.input-form {  
+  margin: 40px 20px 0;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-raised-button.mat-accent {
+  width: 100%!important;
+}
